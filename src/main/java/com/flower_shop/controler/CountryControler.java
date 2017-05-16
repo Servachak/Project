@@ -25,6 +25,7 @@ public class CountryControler extends HttpServlet {
 		country.setName(req.getParameter("countryName"));
 		
 		CountryService countryService = (CountryService) WelcomeControler.context.getBean("countryServiceImpl");
+		
 		countryService.save(country);
 		
 		req.getRequestDispatcher("welcome.jsp").forward(req, resp);
